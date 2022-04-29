@@ -1,0 +1,18 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CheckoutSpec, org.scalatest.tools.Framework$$anon$1@6b6e76bc, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCheckoutSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCheckout Service[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should get correct price for a single apple[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should get correct price for a single Orange[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return nothing for unrecognised items[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should get correct totals for one item of each[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Apply the Deal for apple[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Apply the Deal for Oranges[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Apply the Deal for apples, but full price for 3rd[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should Apply the Deal for apples, but full price for 4th[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 391 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 8[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 8, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CheckoutSpec[0m
