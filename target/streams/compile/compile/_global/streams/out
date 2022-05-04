@@ -1,0 +1,22 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:22:19: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 1||3||5||7|8||10|12 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:22:16: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 1||3||5||7|8||10|12 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:22:13: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 1||3||5||7|8||10|12 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:22:24: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 1||3||5||7|8||10|12 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:23:19: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 4||6||9||11 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:23:16: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 4||6||9||11 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/adamshahzad/Projects/ApplesAndOranges/src/main/scala/DateFormatter.scala:23:13: not found: value ||[0m
+[0m[[0m[31merror[0m] [0m[0m      case 4||6||9||11 => dayOfMonth <= 31[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m7 errors found[0m
