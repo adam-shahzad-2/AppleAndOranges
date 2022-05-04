@@ -13,7 +13,7 @@ object DateFormatter {
 
     var maybeMonthList: List[Int] = List.empty
     var maybeDayList: List[Int] = List.empty
-    val maybeYearList: List[Int] = inputList
+    var maybeYearList: List[Int] = List.empty
 
     maybeMonthList = inputList.flatMap{ segment =>
       Some(segment).filter(validMonth)
@@ -21,6 +21,10 @@ object DateFormatter {
 
     maybeDayList = inputList.flatMap{ segment =>
       Some(segment).filter(simpleValidDayOfMonth)
+    }
+
+    maybeYearList = inputList.flatMap{ segment =>
+      Some(segment).filter(validYear)
     }
 
     PotentialDate(maybeDayList, maybeMonthList, maybeYearList)
@@ -37,11 +41,11 @@ object DateFormatter {
     newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != newMaybeDayList.head)
     newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != potentialDate.potentialMonth.head)
 
-       s"${formatYear(newMaybeYearList.head.toString)}-${potentialDate.potentialMonth}-${newMaybeDayList.head}"
+       s"${formatYear(newMaybeYearList.head.toString)}-${potentialDate.potentialMonth.head}-${newMaybeDayList.head}"
 
   }
 
-  def simpleValidDayOfMonth(dayOfMonth: Int) : Boolean = dayOfMonth <= 31
+  def simpleValidDayOfMonth(dayOfMonth: Int) : Boolean = dayOfMonth <= 31 && dayOfMonth > 0
 
 //  def complexValidDayOfMonth(dayOfMonth: Int, leapYear: Boolean, month: Int): Boolean = {
 //    month match {
@@ -52,7 +56,9 @@ object DateFormatter {
 //    }
 //  }
 
-  def validMonth(month: Int): Boolean = month <= 12
+  def validMonth(month: Int): Boolean = month <= 12 && month > 0
+
+  def validYear(year: Int): Boolean = year >= 0
 
   def formatYear(year: String): String = if (year.length == 2) {s"20$year"} else year
 

@@ -1,5 +1,5 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CheckoutSpec, org.scalatest.tools.Framework$$anon$1@2238caad, false, [SuiteSelector])[0m
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(DateFormatterSpec, org.scalatest.tools.Framework$$anon$1@2238caad, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(CheckoutSpec, org.scalatest.tools.Framework$$anon$1@795bf7a7, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(DateFormatterSpec, org.scalatest.tools.Framework$$anon$1@795bf7a7, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mCheckoutSpec:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mCheckout Service[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should get correct price for a single apple[0m[0m
@@ -15,14 +15,30 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should return expected output when only valid response[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should return expected output when multiple segments can refer to different time attributes[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m- should return expected output when every number is the same *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  "[INVALID DATE]" was not equal to "[10-10-10]" (DateFormatterSpec.scala:17)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  java.util.NoSuchElementException: head of empty list[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.immutable.Nil$.head(List.scala:662)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at scala.collection.immutable.Nil$.head(List.scala:661)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at DateFormatter$.handleMaybeLists(DateFormatter.scala:44)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at DateFormatter$.input(DateFormatter.scala:7)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at DateFormatterSpec.$anonfun$new$4(DateFormatterSpec.scala:17)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  ...[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should return invalid response when dates are invalid[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32myearFormatter[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should add 2000 if the year contains two digits[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 604 milliseconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 13[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should not add if the year already has four digits[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mfillMaybeLists[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should create the correct Potential date from 10/10/10[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should create the correct Potential date from 31/12/2001[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should create the correct Potential date invalid data -1/-1/-1[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 367 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 17[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 2, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 12, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 16, failed 1, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	CheckoutSpec[0m

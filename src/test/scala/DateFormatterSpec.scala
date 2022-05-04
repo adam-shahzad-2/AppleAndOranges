@@ -46,6 +46,13 @@ class DateFormatterSpec extends AnyWordSpec with Matchers {
         potentialMonth = List(12),
         potentialYear = List(31,12,2001))
     }
+
+    "create the correct Potential date invalid data -1/-1/-1" in {
+      DateFormatter.fillMaybeLists(List(-1,-1,-1)) shouldBe PotentialDate(
+        potentialDay = List.empty,
+        potentialMonth = List.empty,
+        potentialYear = List.empty)
+    }
   }
 
 }
