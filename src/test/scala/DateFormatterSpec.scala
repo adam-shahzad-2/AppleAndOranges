@@ -24,7 +24,27 @@ class DateFormatterSpec extends AnyWordSpec with Matchers {
 
   "yearFormatter" should {
     "add 2000 if the year contains two digits" in {
-      DateFormatter.formatYear("20") shouldBe "2020"
+      DateFormatter.formatYear("22") shouldBe "2022"
+    }
+
+    "not add if the year already has four digits" in {
+      DateFormatter.formatYear("2022") shouldBe "2022"
+    }
+  }
+
+  "fillMaybeLists" should {
+    "create the correct Potential date from 10/10/10" in {
+      DateFormatter.fillMaybeLists(List(10,10,10)) shouldBe PotentialDate(
+        potentialDay = List(10,10,10),
+        potentialMonth = List(10,10,10),
+        potentialYear = List(10,10,10))
+    }
+
+    "create the correct Potential date from 31/12/2001" in {
+      DateFormatter.fillMaybeLists(List(31,12,2001)) shouldBe PotentialDate(
+        potentialDay = List(31,12),
+        potentialMonth = List(12),
+        potentialYear = List(31,12,2001))
     }
   }
 

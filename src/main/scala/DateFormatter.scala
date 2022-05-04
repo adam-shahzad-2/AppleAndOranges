@@ -3,6 +3,14 @@ object DateFormatter {
   def input(inputString: String): String = {
 
     val inputList: List[Int] = inputString.split('/').toList.map(_.toInt)
+
+    handleMaybeLists(potentialDate = fillMaybeLists(inputList))
+
+  }
+
+  def fillMaybeLists(inputList: List[Int]
+                    ): PotentialDate = {
+
     var maybeMonthList: List[Int] = List.empty
     var maybeDayList: List[Int] = List.empty
     val maybeYearList: List[Int] = inputList
@@ -15,27 +23,22 @@ object DateFormatter {
       Some(segment).filter(simpleValidDayOfMonth)
     }
 
-    handleMaybeLists(maybeDayList, maybeMonthList, maybeYearList)
+    PotentialDate(maybeDayList, maybeMonthList, maybeYearList)
+
   }
 
 
-  def handleMaybeLists(maybeDayList: List[Int] , maybeMonthList: List[Int], maybeYearList: List[Int]): String = {
+  def handleMaybeLists(potentialDate: PotentialDate): String = {
 
-    if (maybeMonthList.isEmpty || maybeDayList.isEmpty) return "INVALID DATE"
+    if (potentialDate.potentialMonth.isEmpty || potentialDate.potentialDay.isEmpty) return "INVALID DATE"
 
-    var newMaybeDayList = maybeDayList.filter(maybeDay => maybeDay != maybeMonthList.head)
-    var newMaybeYearList = maybeYearList.filter(maybeYear => maybeYear != maybeMonthList.head)
+    var newMaybeDayList = potentialDate.potentialDay.filter(maybeDay => maybeDay != potentialDate.potentialMonth.head)
+    var newMaybeYearList = potentialDate.potentialYear.filter(maybeYear => maybeYear != potentialDate.potentialMonth.head)
     newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != newMaybeDayList.head)
-    newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != maybeDayList.head)
+    newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != potentialDate.potentialMonth.head)
 
+       s"${formatYear(newMaybeYearList.head.toString)}-${potentialDate.potentialMonth}-${newMaybeDayList.head}"
 
-    if (newMaybeYearList.isEmpty || newMaybeYearList.isEmpty
-    ) {
-      "INVALID DATE"
-    }
-    else {
-       s"${formatYear(newMaybeYearList.head.toString)}-${maybeMonthList.head}-${newMaybeDayList.head}"
-    }
   }
 
   def simpleValidDayOfMonth(dayOfMonth: Int) : Boolean = dayOfMonth <= 31
