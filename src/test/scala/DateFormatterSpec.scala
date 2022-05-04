@@ -14,7 +14,7 @@ class DateFormatterSpec extends AnyWordSpec with Matchers {
     }
 
     "return expected output when every number is the same" in {
-      DateFormatter.input("10/10/10") shouldBe "10-10-10"
+      DateFormatter.input("10/10/10") shouldBe "2010-10-10"
     }
 
     "return invalid response when dates are invalid" in {

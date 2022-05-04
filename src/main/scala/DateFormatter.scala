@@ -31,15 +31,26 @@ object DateFormatter {
 
   }
 
+  private def filterFirst(seq: Seq[Int], value: Int): Seq[Int] = {
+    val index = seq.indexOf(value)
+    if (index < 0) {
+      seq
+    } else if (index == 0) {
+      seq.tail
+    } else {
+      val (a, b) = seq.splitAt(index)
+      a ++ b.tail
+    }
+  }
+
 
   def handleMaybeLists(potentialDate: PotentialDate): String = {
 
     if (potentialDate.potentialMonth.isEmpty || potentialDate.potentialDay.isEmpty) return "INVALID DATE"
 
-    var newMaybeDayList = potentialDate.potentialDay.filter(maybeDay => maybeDay != potentialDate.potentialMonth.head)
-    var newMaybeYearList = potentialDate.potentialYear.filter(maybeYear => maybeYear != potentialDate.potentialMonth.head)
-    newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != newMaybeDayList.head)
-    newMaybeYearList = newMaybeYearList.filter(maybeYear => maybeYear != potentialDate.potentialMonth.head)
+    var newMaybeDayList = filterFirst(potentialDate.potentialDay, potentialDate.potentialMonth.head)
+    var newMaybeYearList = filterFirst(potentialDate.potentialYear, potentialDate.potentialMonth.head)
+    newMaybeYearList = filterFirst(newMaybeYearList, newMaybeDayList.head)
 
        s"${formatYear(newMaybeYearList.head.toString)}-${potentialDate.potentialMonth.head}-${newMaybeDayList.head}"
 
